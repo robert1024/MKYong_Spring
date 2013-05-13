@@ -51,6 +51,11 @@ public class App
 		System.out.println(cust);
 	}
 	
+	public static void listFacotryBeanTest(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-ListFactoryBean.xml");
+		com.bigshi.mkyong.spring.common.listfactorybean.Customer cust = (com.bigshi.mkyong.spring.common.listfactorybean.Customer) context.getBean("CustomerBean");
+		System.out.println(cust);
+	}
     public static void main( String[] args )
     {
 
@@ -63,6 +68,9 @@ public class App
     	//beanScopeTest();
     	
     	/** Spring Collections Test */
-    	springCollectionsTest();
+    	//springCollectionsTest();
+    	
+    	/** List Factory Bean Test */
+    	listFacotryBeanTest();
     }
 }

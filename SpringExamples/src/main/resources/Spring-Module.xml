@@ -3,8 +3,36 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-	<bean id="helloBean" class="com.bigshi.mkyong.spring.HelloWorld">
+	<bean id="helloBean" class="com.bigshi.mkyong.spring.common.HelloWorld">
 		<property name="name" value="Robert"/>
 	</bean>
 
+<!-- 	<bean id="OutputHelper" class="com.bigshi.mkyong.spring.output.OutputHelper"> -->
+<!-- 		<property name="outputGenerator" ref="CsvOutputGenerator"/> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="CsvOutputGenerator" class="com.bigshi.mkyong.spring.output.impl.CsvOutputGenerator" /> -->
+
+	<!-- Constructor Injection
+	
+	specify the type of constructor-arg to escape issue from multiple constructors
+	
+	-->
+	<bean id="OutputHelper" class="com.bigshi.mkyong.spring.output.OutputHelper">
+		<constructor-arg type="">
+			<ref bean="JsonOutputGenerator"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="JsonOutputGenerator" class="com.bigshi.mkyong.spring.output.impl.JsonOutputGenerator" />
+
+	<!-- How To Inject Value Into Bean Properties In Spring? -->
+	<bean id="FileNameGenerator" class="com.bigshi.mkyong.spring.common.FileNameGenerator">
+		<property name="name" value="rshi" />
+		<property name="type" value="txt" />
+	</bean>
+	
+	<bean id="pFileNameGenerator" class="com.bigshi.mkyong.spring.common.FileNameGenerator"
+		p:name="rshi" p:type="txt"/>
+		
 </beans>

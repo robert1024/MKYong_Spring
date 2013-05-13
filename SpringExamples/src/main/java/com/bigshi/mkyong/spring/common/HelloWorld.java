@@ -1,4 +1,4 @@
-package com.bigshi.mkyong.spring;
+package com.bigshi.mkyong.spring.common;
 
 public class HelloWorld {
 	private String name;

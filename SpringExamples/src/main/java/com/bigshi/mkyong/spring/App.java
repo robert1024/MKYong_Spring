@@ -56,6 +56,13 @@ public class App
 		com.bigshi.mkyong.spring.common.listfactorybean.Customer cust = (com.bigshi.mkyong.spring.common.listfactorybean.Customer) context.getBean("CustomerBean");
 		System.out.println(cust);
 	}
+	
+	public static void dateInjectTest(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Customer-Date.xml");
+		com.bigshi.mkyong.spring.common.date.Customer cust = (com.bigshi.mkyong.spring.common.date.Customer)context.getBean("customerCDE");
+		System.out.println(cust);
+	}
+	
     public static void main( String[] args )
     {
 
@@ -71,6 +78,9 @@ public class App
     	//springCollectionsTest();
     	
     	/** List Factory Bean Test */
-    	listFacotryBeanTest();
+    	//listFacotryBeanTest();
+    	
+    	/** Date Inject Test */
+    	dateInjectTest();
     }
 }

@@ -1,0 +1,66 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="CustomerBean" class="com.bigshi.mkyong.spring.common.collections.Customer">
+	
+		<!-- java.util.List -->
+		<property name="lists">
+			<list>
+				<value>1</value>
+				<ref bean="PersonBean" />
+				<bean class="com.bigshi.mkyong.spring.common.collections.Person">
+					<property name="name" value="rshi_list" />
+					<property name="address" value="address_list" />
+					<property name="age" value="28" />
+				</bean>
+			</list>
+		</property>
+		
+		<!-- java.util.Set -->
+		<property name="sets">
+			<set>
+				<value>1</value>
+				<ref bean="PersonBean" />
+				<bean class="com.bigshi.mkyong.spring.common.collections.Person">
+					<property name="name" value="rshi_set" />
+					<property name="address" value="address_set" />
+					<property name="age" value="28" />
+				</bean>				
+			</set>
+		</property>
+		
+		<!-- java.util.Map -->
+		<property name="maps">
+			<map>
+				<entry key="Key 1" value="1"/>
+				<entry key="Key 2" value-ref="PersonBean"/>
+				<entry key="Key 3">
+					<bean class="com.bigshi.mkyong.spring.common.collections.Person">
+						<property name="name" value="rshi_map" />
+						<property name="address" value="address_map" />
+						<property name="age" value="28" />
+					</bean>		
+				</entry>
+			</map>
+		</property>
+		
+		<!-- java.util.properties -->
+		<property name="pros">
+			<props>
+				<prop key="admin">admin@bigshi.com</prop>
+				<prop key="support">support@bigshi.com</prop>
+			</props>
+		</property>
+		
+		
+	</bean>
+	
+	<bean id="PersonBean" class="com.bigshi.mkyong.spring.common.collections.Person">
+		<property name="name" value="rshi" />
+		<property name="address" value="address" />
+		<property name="age" value="28" />
+	</bean>
+	
+</beans>

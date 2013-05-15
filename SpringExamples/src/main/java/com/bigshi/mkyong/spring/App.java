@@ -63,6 +63,12 @@ public class App
 		System.out.println(cust);
 	}
 	
+	public static void beanConfigInheritance(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("Spirng-Bean-Config-Inheritance.xml");
+		com.bigshi.mkyong.spring.common.beaninheritance.Customer cust = (com.bigshi.mkyong.spring.common.beaninheritance.Customer)context.getBean("CustomerBean");
+		System.out.println(cust);
+	}
+	
     public static void main( String[] args )
     {
 
@@ -81,6 +87,10 @@ public class App
     	//listFacotryBeanTest();
     	
     	/** Date Inject Test */
-    	dateInjectTest();
+    	//dateInjectTest();
+    	
+    	/** Bean config inheritance */
+    	beanConfigInheritance();
+    	
     }
 }

@@ -1,5 +1,7 @@
 package com.bigshi.mkyong.spring.dependencychecking;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Customer {
 
 	private Person person;
@@ -8,6 +10,7 @@ public class Customer {
 	public Person getPerson() {
 		return person;
 	}
+	@Required
 	public void setPerson(Person person) {
 		this.person = person;
 	}
